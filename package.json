@@ -11,9 +11,11 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
+    "glob": "^7.1.2",
     "mongoose": "^5.0.17",
     "node-rest-client": "^3.1.0",
     "node-restful": "^0.2.6",
-    "samba-client": "^2.0.0"
+    "samba-client": "^2.0.0",
+    "walker": "^1.0.7"
   }
 }
