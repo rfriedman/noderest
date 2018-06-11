@@ -18,10 +18,10 @@ var documentSchema = new mongoose.Schema({
 
 
 function parseDocument(document){
-  var doc = {/*fname:  null,*/ lname:  null, department:  null, document_name:  null, document_url:  null};
+  var doc = {fname:  null, lname:  null, department:  null, document_name:  null, document_url:  null};
   var ar = document.split('/');
   var name = ar[3].split(' ');
-  //doc.fname = name[0];
+  doc.fname = name[0];
   doc.lname = name[1];
   doc.department = ar[2];
   doc.document_name = ar[4];
@@ -47,25 +47,27 @@ try{
    // console.log(parseDocument(match));
 
     args.data = parseDocument(match);
-    console.log(args.data);
+   // console.log(args.data);
     
   
     client.methods.postMethod(args, function (data, response) {
     // parsed response body as js object
-    console.log(data);
+   // console.log(data);
     // raw response
-    //console.log(response.status);
+   console.log(response.statusCode);
     
 });
-if(args.data) throw BreakException;
+//if(args.data) throw BreakException;
     
   });
 }catch(e){
   if (e !== BreakException) throw e;
 
+}finally{
+  console.log("after")
 }
 })
-console.log("after")
+
 
 
 

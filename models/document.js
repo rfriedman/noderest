@@ -6,6 +6,7 @@ var mongoose = restful.mongoose;
 var documentSchema = new mongoose.Schema({
     fname: String,
     lname: String,
+    department:  String,
     document_name: String,
     document_url: String
     
